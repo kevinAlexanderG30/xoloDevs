@@ -126,7 +126,7 @@ export const IMAGES = {
     onborder4 : require('../assets/images/onbording/pic9.png'),
     onborder5 : require('../assets/images/onbording/pic10.png'),
 
-    vacaCategories :  require('../assets/images/icons/vacaIcons.png'),
+    vacaCategories :  require('../assets/images/icons/iconvaca.png'),
 
     vacasBording1 : require('../assets/images/bordingVacas/vaca1.png'),
     vacasBording2 : require('../assets/images/bordingVacas/vaca2.png'),

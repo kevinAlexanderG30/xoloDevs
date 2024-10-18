@@ -104,7 +104,9 @@ const DrawerMenu = () => {
                 >
                     <Image
                         style={{height:35,width:114}}
-                        source={theme.dark ? IMAGES.appnamedark :IMAGES.appname}
+                        //
+                        //source={theme.dark ? IMAGES.appnamedark :IMAGES.appname}
+                        source={theme.dark ? IMAGES.appVacaLogoHorizontal :IMAGES.appVacaLogoHorizontal}
                     />
                 </View>
                 <View

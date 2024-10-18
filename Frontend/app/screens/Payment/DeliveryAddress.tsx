@@ -15,23 +15,23 @@ import { RootStackParamList } from '../../navigation/RootStackParamList';
 const saveData = [
     {
         image: IMAGES.Home4,
-        title: "Home Address",
-        text: "123 Main Street, Anytown, USA 12345",
+        title: "Finca Santa Teresa",
+        text: "Jinotega, 65000",
     },
     {
         image: IMAGES.map,
-        title: "Office Address",
-        text: "456 Elm Avenue, Smallville, CA 98765",
+        title: "La Finquita",
+        text: "Del Inacs 3cal oeste, 65000",
     },
     {
         image: IMAGES.Home4,
-        title: "Home Address",
-        text: "789 Maple Lane, Suburbia, NY 54321",
+        title: "Subasta Ganadera El Corral",
+        text: "6WC4+Q3, Tipitapa",
     },
     {
         image: IMAGES.shop,
-        title: "Shop Address",
-        text: "654 Pine Road, Countryside, FL 34567",
+        title: "Subasta Ganadera SUGANAR S.A.",
+        text: "Tipitapa 11065",
     },
 ]
 
@@ -48,7 +48,7 @@ const DeliveryAddress = ({navigation} : DeliveryAddressScreenProps) => {
     return (
         <View style={{backgroundColor:colors.background,flex:1}}>
             <Header
-                title='Delivery Address'
+                title='Dirección de entrega'
                 leftIcon='back'
                 // titleLeft
                 titleRight
@@ -114,7 +114,7 @@ const DeliveryAddress = ({navigation} : DeliveryAddressScreenProps) => {
                                 style={[GlobalStyleSheet.image2,{ tintColor:COLORS.title }]}
                                 source={IMAGES.plus}
                             />
-                            <Text style={{ ...FONTS.fontRegular, fontSize: 14, color: COLORS.title}}>Add Address</Text>
+                            <Text style={{ ...FONTS.fontRegular, fontSize: 14, color: COLORS.title}}>Agregar dirección</Text>
                         </View>
                         <FeatherIcon size={22} color={COLORS.title} name={'arrow-right'} />
                     </TouchableOpacity>
@@ -123,7 +123,7 @@ const DeliveryAddress = ({navigation} : DeliveryAddressScreenProps) => {
             <View style={[GlobalStyleSheet.container,{}]}>
                
                     <Button
-                        title='Continue'
+                        title='Continuar'
                         color={COLORS.primary}
                         text={ COLORS.card}
                         onPress={() => navigation.navigate('Payment')}

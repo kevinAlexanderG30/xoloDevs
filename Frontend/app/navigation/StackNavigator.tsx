@@ -55,13 +55,14 @@ import SwipeableScreen from '../screens/Components/Swipeable';
 import Tabs from '../screens/Components/Tabs';
 import Tables from '../screens/Components/Tables';
 import Toggles from '../screens/Components/Toggles';
+import { useAuthStore } from '../store/useAuthStore';
 
 
 
 const Stack = createStackNavigator<RootStackParamList>();
 
 const StackNavigator = () => {
-
+	const { isAuthenticated } = useAuthStore();
     const theme = useTheme();
 
     return (
@@ -74,6 +75,8 @@ const StackNavigator = () => {
 					cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
 				}}
 			>
+				{!isAuthenticated ? (
+					<>
 				<Stack.Screen name="Onboarding" component={Onboarding} />
 				<Stack.Screen name="WelCome" component={WelCome} />
 				<Stack.Screen name="SignUp" component={SignUp} />
@@ -81,51 +84,57 @@ const StackNavigator = () => {
 				<Stack.Screen name="ForgotPassword" component={ForgotPassword} />
 				<Stack.Screen name="OTPAuthentication" component={OTPAuthentication} />
 				<Stack.Screen name="NewPassword" component={NewPassword} />
-				<Stack.Screen name="DrawerNavigation" component={DrawerNavigation} />
-				<Stack.Screen name="BottomNavigation" component={BottomNavigation} />
-				<Stack.Screen name="Notification" component={Notification} />
-				<Stack.Screen name="Search" component={Search} />
-				<Stack.Screen name="Products" component={Products} />
-				<Stack.Screen name="ProductsDetails" component={ProductsDetails} />
-				<Stack.Screen name="DeliveryAddress" component={DeliveryAddress} />
-				<Stack.Screen name="AddDeliveryAddress" component={AddDeliveryAddress} />
-				<Stack.Screen name="Payment" component={Payment} />
-				<Stack.Screen name="Addcard" component={Addcard} />
-				<Stack.Screen name="Checkout" component={Checkout} />
-				<Stack.Screen name="Myorder" component={Myorder} />
-				<Stack.Screen name="Trackorder" component={Trackorder} />
-				<Stack.Screen name="Writereview" component={Writereview} />
-				<Stack.Screen name="Rewards" component={Rewards} />
-				<Stack.Screen name="Demo" component={Demo} />
-				<Stack.Screen name="Chat" component={Chat} />
-				 <Stack.Screen name="Singlechat" component={Singlechat} />
-				 <Stack.Screen name="Call" component={Call} /> 
-				 <Stack.Screen name="EditProfile" component={EditProfile} />
+
+					</>
+				) : (
+					<>
+						<Stack.Screen name="DrawerNavigation" component={DrawerNavigation} />
+						<Stack.Screen name="BottomNavigation" component={BottomNavigation} />
+						<Stack.Screen name="Notification" component={Notification} />
+						<Stack.Screen name="Search" component={Search} />
+						<Stack.Screen name="Products" component={Products} />
+						<Stack.Screen name="ProductsDetails" component={ProductsDetails} />
+						<Stack.Screen name="DeliveryAddress" component={DeliveryAddress} />
+						<Stack.Screen name="AddDeliveryAddress" component={AddDeliveryAddress} />
+						<Stack.Screen name="Payment" component={Payment} />
+						<Stack.Screen name="Addcard" component={Addcard} />
+						<Stack.Screen name="Checkout" component={Checkout} />
+						<Stack.Screen name="Myorder" component={Myorder} />
+						<Stack.Screen name="Trackorder" component={Trackorder} />
+						<Stack.Screen name="Writereview" component={Writereview} />
+						<Stack.Screen name="Rewards" component={Rewards} />
+						<Stack.Screen name="Demo" component={Demo} />
+						<Stack.Screen name="Chat" component={Chat} />
+						 <Stack.Screen name="Singlechat" component={Singlechat} />
+						 <Stack.Screen name="Call" component={Call} />
+						 <Stack.Screen name="EditProfile" component={EditProfile} />
 
 
-				<Stack.Screen name="Components" component={Components} />
-				<Stack.Screen name="Accordion" component={AccordionScreen} />
-				<Stack.Screen name="BottomSheet" component={BottomSheet} />
-				<Stack.Screen name="ModalBox" component={ModalBox} />
-				<Stack.Screen name="Buttons" component={Buttons} />
-				<Stack.Screen name="Badges" component={Badges} />
-				<Stack.Screen name="Charts" component={Charts} />
-				<Stack.Screen name="Headers" component={Headers} />
-				<Stack.Screen name="Footers" component={Footers} />
-				<Stack.Screen name="TabStyle1" component={TabStyle1} />
-                <Stack.Screen name="TabStyle2" component={TabStyle2} />
-                <Stack.Screen name="TabStyle3" component={TabStyle3} />
-                <Stack.Screen name="TabStyle4" component={TabStyle4} />
-                <Stack.Screen name="Inputs" component={Inputs} />
-				<Stack.Screen name="lists" component={ListScreen} />
-				<Stack.Screen name="Pricings" component={Pricings} />
-				<Stack.Screen name="DividerElements" component={DividerElements} />
-				<Stack.Screen name="Snackbars" component={Snackbars} />
-				<Stack.Screen name="Socials" component={Socials} />
-				<Stack.Screen name="Swipeable" component={SwipeableScreen} />
-				<Stack.Screen name="Tabs" component={Tabs} />
-				<Stack.Screen name="Tables" component={Tables} />
-				<Stack.Screen name="Toggles" component={Toggles} />
+						<Stack.Screen name="Components" component={Components} />
+						<Stack.Screen name="Accordion" component={AccordionScreen} />
+						<Stack.Screen name="BottomSheet" component={BottomSheet} />
+						<Stack.Screen name="ModalBox" component={ModalBox} />
+						<Stack.Screen name="Buttons" component={Buttons} />
+						<Stack.Screen name="Badges" component={Badges} />
+						<Stack.Screen name="Charts" component={Charts} />
+						<Stack.Screen name="Headers" component={Headers} />
+						<Stack.Screen name="Footers" component={Footers} />
+						<Stack.Screen name="TabStyle1" component={TabStyle1} />
+						<Stack.Screen name="TabStyle2" component={TabStyle2} />
+						<Stack.Screen name="TabStyle3" component={TabStyle3} />
+						<Stack.Screen name="TabStyle4" component={TabStyle4} />
+						<Stack.Screen name="Inputs" component={Inputs} />
+						<Stack.Screen name="lists" component={ListScreen} />
+						<Stack.Screen name="Pricings" component={Pricings} />
+						<Stack.Screen name="DividerElements" component={DividerElements} />
+						<Stack.Screen name="Snackbars" component={Snackbars} />
+						<Stack.Screen name="Socials" component={Socials} />
+						<Stack.Screen name="Swipeable" component={SwipeableScreen} />
+						<Stack.Screen name="Tabs" component={Tabs} />
+						<Stack.Screen name="Tables" component={Tables} />
+						<Stack.Screen name="Toggles" component={Toggles} />
+					</>
+				)}
 			</Stack.Navigator>
 		</View>
     )

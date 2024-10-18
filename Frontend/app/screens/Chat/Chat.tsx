@@ -91,7 +91,7 @@ const Chat = ({navigation} : ChatScreenProps) => {
                 leftIcon='back'
                 rightIcon1={'search'}
             />
-             <ScrollView
+            <ScrollView
                 contentContainerStyle={{ flexGrow:1 }}
             >
                 <View style={[GlobalStyleSheet.container, {paddingTop:5}]}>
@@ -124,17 +124,17 @@ const Chat = ({navigation} : ChatScreenProps) => {
                                 </View>
                                 {data.hasstory ?
 
-                                    <View 
+                                    <View
                                         style={{
-                                            height: 16, 
-                                            width: 16, 
-                                            borderRadius: 15, 
-                                            backgroundColor: colors.card, 
-                                            alignItems: 'center', 
-                                            justifyContent: 'center', 
-                                            position: 'absolute', 
-                                            bottom: 6, 
-                                            left: 54 
+                                            height: 16,
+                                            width: 16,
+                                            borderRadius: 15,
+                                            backgroundColor: colors.card,
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            position: 'absolute',
+                                            bottom: 6,
+                                            left: 54
                                         }}
                                     >
                                         <View style={{ height: 10, width: 10, borderRadius: 12, backgroundColor: COLORS.success }}></View>

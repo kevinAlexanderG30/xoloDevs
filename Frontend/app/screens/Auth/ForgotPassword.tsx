@@ -35,7 +35,8 @@ const ForgotPassword = ({navigation} :ForgotPasswordScreenProps) => {
             <View style={{flex:1,alignItems:'center',marginLeft:-40}}>
                 <Image
                     style={{height:36,width:120,resizeMode:'contain'}}
-                    source={theme.dark ? IMAGES.appnamedark :IMAGES.appname}
+                    // source={theme.dark ? IMAGES.appnamedark :IMAGES.appname}
+                    source={theme.dark ? IMAGES.appVacaLogoHorizontal :IMAGES.appVacaLogoHorizontal}
                 />
             </View>
         </View>
@@ -43,11 +44,11 @@ const ForgotPassword = ({navigation} :ForgotPasswordScreenProps) => {
             <View style={[GlobalStyleSheet.container,{flexGrow:1,paddingBottom:0,paddingHorizontal:30,paddingTop:0}]}>
                 <View style={{}}>
                     <View style={{marginBottom:30}}>
-                        <Text style={[styles.title1,{color:colors.title}]}>Forgot Password</Text>
-                        <Text style={[styles.title2, {color: colors.title }]}>Enter The Email Associated With Your Account And We’ll Send And Email To Reset Your Password</Text>
+                        <Text style={[styles.title1,{color:colors.title}]}>Has olvidado tu contraseña</Text>
+                        <Text style={[styles.title2, {color: colors.title }]}>Ingrese el correo electrónico asociado a su cuenta y le enviaremos un correo electrónico para restablecer su contraseña.</Text>
                     </View>
                     <View style={[GlobalStyleSheet.container,{padding:0}]}>
-                        <Text style={[styles.title3,{color:'#8A8A8A'}]}>Email Address</Text>
+                        <Text style={[styles.title3,{color:'#8A8A8A'}]}>Dirección de correo electrónico</Text>
                     </View>
                     <View style={{ marginBottom: 20, marginTop: 10 }}>
                         <Input
@@ -64,15 +65,15 @@ const ForgotPassword = ({navigation} :ForgotPasswordScreenProps) => {
         </ScrollView>
         <View style={[GlobalStyleSheet.container,{paddingTop:0,paddingHorizontal:30}]}>
             <Button
-                title={"Send Mail"}
+                title={"Enviar correo"}
                 color={COLORS.primary}
                 onPress={() => navigation.navigate('OTPAuthentication')}
                 style={{borderRadius:52}}
             />
            <View style={[GlobalStyleSheet.bottombtn]}>
-                <Text style={[FONTS.fontRegular,{fontSize:14,color:colors.title}]}>Back To</Text>
+                <Text style={[FONTS.fontRegular,{fontSize:14,color:colors.title}]}>Volver a</Text>
                 <TouchableOpacity activeOpacity={0.5} onPress={() => navigation.navigate('SingIn')}>
-                    <Text style={styles.title4}>Sign In</Text>
+                    <Text style={styles.title4}>Iniciar sesión</Text>
                 </TouchableOpacity>
             </View>
         </View>

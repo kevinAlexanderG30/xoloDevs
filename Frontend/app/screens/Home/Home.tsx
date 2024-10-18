@@ -17,38 +17,31 @@ import { openDrawer } from '../../redux/actions/drawerAction';
 const ArrivalData = [
     {
         id:"1",
-        title: "Beverages",
-        subtitle:"41 Menus",
-        image:IMAGES.cup
-    },
-    {
-        id:"2",
-        title: "Foods",
-        subtitle:"37 Menus",
-        image:IMAGES.hamburger
-    },
-    
+        title: "Bovino",
+        subtitle:"41 Publicaciones",
+        image:IMAGES.vacaCategories
+    }
 ]
 
 const CardStyleData =[
     {
         id:"0",
-        image:IMAGES.item1,
-        title:"Hot Creamy Cappuccino Latte Ombe",
+        image:IMAGES.vacasCards1,
+        title:"Guernsey",
         price:"$12.6",
         countnumber:"50 Pts",
     },
     {
         id:"1",
-        image:IMAGES.item2,
-        title:"Creamy Mocha Ome Coffee",
+        image:IMAGES.cerdoCards1,
+        title:"Holstein Frisona",
         price:"$13.6",
         countnumber:"50 Pts",
     },
     {
         id:"2",
-        image:IMAGES.item3,
-        title:"Original Latte Ombe Hot Coffee",
+        image:IMAGES.vacasCards2,
+        title:"Landrace",
         price:"$12.6",
         countnumber:"50 Pts",
     },

@@ -38,15 +38,16 @@ const OTPAuthentication = ({navigation} : OTPAuthenticationScreenProps) => {
             <View style={{flex:1,alignItems:'center',marginLeft:-40}}>
                 <Image
                     style={{height:36,width:120,resizeMode:'contain'}}
-                    source={theme.dark ? IMAGES.appnamedark :IMAGES.appname}
+                    // source={theme.dark ? IMAGES.appnamedark :IMAGES.appname}
+                    source={theme.dark ? IMAGES.appVacaLogoHorizontal :IMAGES.appVacaLogoHorizontal}
                 />
             </View>
         </View>
         <View style={{flex:1}}>
             <View style={[GlobalStyleSheet.container,{flexGrow:1,paddingHorizontal:30,paddingBottom:0}]}>
                 <ScrollView>
-                    <Text style={[styles.title1,{color:colors.title,textAlign:'center'}]}>Enter Code</Text>
-                    <Text style={[FONTS.fontRegular,{fontSize:14,color:colors.title,textAlign:'center'}]}>An Authentication Code Has Sent To{"\n"}info@examplegmail.com</Text>
+                    <Text style={[styles.title1,{color:colors.title,textAlign:'center'}]}>Introducir código</Text>
+                    <Text style={[FONTS.fontRegular,{fontSize:14,color:colors.title,textAlign:'center'}]}>Se ha enviado un código de autenticación a{"\n"}info@examplegmail.com</Text>
                     <View>
                         <View style={{marginBottom:20}}>
                            <OTPInput
@@ -58,20 +59,20 @@ const OTPAuthentication = ({navigation} : OTPAuthenticationScreenProps) => {
                            {/* <StatusBar barStyle={'light-content'}/> */}
                         </View> 
                     </View>
-                    <Text style={[styles.title2,{color:colors.title,textAlign:'center'}]}>If you don't receive code! <Text style={{...FONTS.fontMedium,textDecorationLine:'underline',color:COLORS.primary}}>Resend</Text></Text>
+                    <Text style={[styles.title2,{color:colors.title,textAlign:'center'}]}>Si no recibe el código! <Text style={{...FONTS.fontMedium,textDecorationLine:'underline',color:COLORS.primary}}></Text>Reenviar</Text>
                 </ScrollView>
                 <View style={{marginBottom:10}}>
                     <View style={{}}>
                         <Button
-                            title={"Verify and proceed"}
+                            title={"Verificar y continuar"}
                             onPress={() => navigation.navigate('NewPassword')}
                             style={{borderRadius:48}}
                         />
                     </View>
                     <View style={[GlobalStyleSheet.bottombtn]}>
-                        <Text style={[FONTS.fontRegular,{fontSize:14,color:colors.title}]}>Back To</Text>
+                        <Text style={[FONTS.fontRegular,{fontSize:14,color:colors.title}]}>Volver a</Text>
                         <TouchableOpacity activeOpacity={0.5} onPress={() => navigation.navigate('SingIn')}>
-                            <Text style={styles.title4}>Sign In</Text>
+                            <Text style={styles.title4}>Iniciar sesión</Text>
                         </TouchableOpacity>
                     </View>
                 </View>

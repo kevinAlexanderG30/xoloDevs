@@ -13,20 +13,20 @@ const profileData = [
     {
         id:"1",
         image:IMAGES.call,
-        title:'Mobile Phone',
-        subtitle:"+12 345 678 92"
+        title:'Numero Telefonico',
+        subtitle:"+505 8488 7264"
     },
     {
         id:"2",
         image:IMAGES.email,
-        title:'Email Address',
-        subtitle:"example@gmail.com"
+        title:'Correo Electronico',
+        subtitle:"wiliamSmith@gmail.com"
     },
     {
         id:"3",
         image:IMAGES.map,
-        title:'Address',
-        subtitle:"Franklin Avenue, Corner St. \nLondon, 24125151"
+        title:'Ubicacion',
+        subtitle:"Jinotega. \nFinca Santa Teresa, 24125151"
     },
 ]
 
@@ -35,13 +35,13 @@ const profilecartData = [
         id:"1",
         title: "Creamy Latte\nCoffee",
         subtitle:"Beverages",
-        image:IMAGES.item15
+        image:IMAGES.vacasCards1
     },
     {
         id:"2",
         title: "Ombe Ice Coffee \n Latte",
         subtitle:"Beverages",
-        image:IMAGES.item16
+        image:IMAGES.vacasCards2
     },
 
 ]
@@ -71,7 +71,7 @@ const Profile = ({navigation} : ProfileScreenProps) => {
                     />
                 </View>
                 <Text style={{...FONTS.fontSemiBold,fontSize:28,color:colors.title}}>William Smith</Text>
-                <Text style={{...FONTS.fontRegular,fontSize:16,color:COLORS.primary}}>London, England</Text>
+                <Text style={{...FONTS.fontRegular,fontSize:16,color:COLORS.primary}}>Jinotega, Finca Santa Teresa</Text>
             </View>
             <View 
                 style={[GlobalStyleSheet.container,{paddingHorizontal:40,marginTop:20}]}
@@ -102,7 +102,7 @@ const Profile = ({navigation} : ProfileScreenProps) => {
             </View>
             <View style={[GlobalStyleSheet.container,{padding:0}]}>
                 <View style={[GlobalStyleSheet.flex,{paddingHorizontal:30}]}>
-                    <Text style={[styles.brandsubtitle3,{fontSize: 18,color:colors.title}]}>Most Ordered</Text>
+                    <Text style={[styles.brandsubtitle3,{fontSize: 18,color:colors.title}]}>Mas Ordenes</Text>
                 </View>
                 <View style={{ marginHorizontal: -15, paddingHorizontal: 15, paddingTop: 25 }}>
                         <ScrollView
