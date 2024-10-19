@@ -22,6 +22,29 @@ class CowSerializer(serializers.ModelSerializer):
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
+class ProfilePictureSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['profile_picture']
+
+
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.parsers import MultiPartParser, FormParser
+
+class ProfilePictureUpdateView(APIView):
+    permission_classes = [IsAuthenticated]
+    parser_classes = [MultiPartParser, FormParser]  # Permitir subir archivos
+
+    @swagger_auto_schema(request_body=ProfilePictureSerializer)
+    def patch(self, request):
+        user = request.user
+        serializer = ProfilePictureSerializer(user, data=request.data, partial=True)
+        
+        if serializer.is_valid():
+            serializer.save()
+            return Response({"message": "Foto de perfil actualizada exitosamente"}, status=status.HTTP_200_OK)
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class CowViewSet(viewsets.ModelViewSet):
     queryset = Cow.objects.all()
