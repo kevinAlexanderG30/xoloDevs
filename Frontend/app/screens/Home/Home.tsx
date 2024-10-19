@@ -28,22 +28,22 @@ const CardStyleData =[
         id:"0",
         image:IMAGES.vacasCards1,
         title:"Guernsey",
-        price:"$12.6",
-        countnumber:"50 Pts",
+        price:"$1200",
+        countnumber:"765 kg",
     },
     {
         id:"1",
         image:IMAGES.cerdoCards1,
         title:"Holstein Frisona",
-        price:"$13.6",
-        countnumber:"50 Pts",
+        price:"$1300",
+        countnumber:"590 kg",
     },
     {
         id:"2",
         image:IMAGES.vacasCards2,
         title:"Landrace",
-        price:"$12.6",
-        countnumber:"50 Pts",
+        price:"$600",
+        countnumber:"320 kg",
     },
 ]
 
@@ -52,21 +52,21 @@ const SwiperData = [
         id:"1",
         image:IMAGES.vacasCards1,
         title:"Razas Guernsey",
-        price:"5.8",
-        discount:"$8.0"
+        price:"1200",
+        discount:"$1200"
     },
     {
         id:"2",
         image:IMAGES.vacasCards2,
         title:"Razas Holstein Frisona",
-        price:"5.8",
-        discount:"$8.0"
+        price:"1580",
+        discount:"$460"
     },
     {
         id:"3",
         image:IMAGES.cerdoCards1,
         title:"Raza Landrace",
-        price:"5.8",
+        price:"1380",
         discount:"$8.0"
     }
 ]
@@ -214,7 +214,7 @@ export const Home = ({ navigation }: HomeScreenProps) => {
                                     price={data.price}
                                     countnumber={data.countnumber} 
                                     title={data.title}
-                                    onPress={() => navigation.navigate('ProductsDetails')}                                        
+                                    onPress={() => navigation.navigate('ProductsDetails')}
                                     onPress5={() => addItemToWishList(data)}                                
                                 />
                             </View>

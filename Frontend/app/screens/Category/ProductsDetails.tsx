@@ -15,7 +15,7 @@ import Swiper from 'react-native-swiper/src';
 import { Feather } from '@expo/vector-icons';
 
 
-const ItemImages = [IMAGES.item4, IMAGES.item5, IMAGES.item6];
+const ItemImages = [IMAGES.vacasCards1, IMAGES.vacasCards1, IMAGES.vacasCards1];
 
 type ProductsDetailsScreenProps = StackScreenProps<RootStackParamList, 'ProductsDetails'>;
 
@@ -30,10 +30,10 @@ const ProductsDetails = ({navigation} : ProductsDetailsScreenProps) => {
     const addItemToCart = () => {
         dispatch(addToCart({
             id:"15",
-            image:IMAGES.item11,
-            title:"Hot Creamy Cappuccino Latte Ombe",
-            price:"$12.6",
-            brand:"Coffee",
+            image:IMAGES.vacasCards1,
+            title:"Razas Guernsey",
+            price:"$1200",
+            brand:"Guernsey",
         } as any ));
     }
 
@@ -73,7 +73,7 @@ const ProductsDetails = ({navigation} : ProductsDetailsScreenProps) => {
                         >
                                 <Feather size={24} color={COLORS.card} name={'arrow-left'} />
                         </TouchableOpacity>
-                        <Text style={{...FONTS.fontSemiBold,fontSize:20,color:COLORS.card}}>Details</Text>
+                        <Text style={{...FONTS.fontSemiBold,fontSize:20,color:COLORS.card}}>Detalles</Text>
                         <TouchableOpacity
                              onPress={() => {addItemToCart(); navigation.navigate('MyCart')}}
                             style={[styles.backbtn,{backgroundColor:'rgba(246,246,246,.3)'}]}
@@ -99,8 +99,9 @@ const ProductsDetails = ({navigation} : ProductsDetailsScreenProps) => {
                         >
                             <Text style={{...FONTS.fontSemiBold,fontSize:24,color:COLORS.card,lineHeight:34}}>4.5</Text>
                         </View>
-                        <Text style={[styles.brandTitle,{color:colors.title}]}>Ice Chocolate Coffee</Text>
-                        <Text style={[styles.subtitle,{color:theme.dark ? 'rgba(255,255,255,.7)':'#4E4E4E',paddingVertical:15}]}>“Lorem ipsum dolor sit amet,{"\n"}consectetur adipiscing elit, sed do</Text>
+                        <Text style={[styles.brandTitle,{color:colors.title}]}>Guernsey</Text>
+                        <Text style={[styles.subtitle,{color:theme.dark ? 'rgba(255,255,255,.7)':'#4E4E4E',paddingVertical:15}]}>“En venta, ofrecemos una vaca de raza Guernsey con trazabilidad completa y garantizada. Esta vaca cuenta con un seguimiento exhaustivo desde su nacimiento, garantizando su origen, estado de salud y alimentación controlada. {"\n"}Se garantiza libre de mastitis y otras afecciones que puedan afectar su productividad.
+                            Movimientos: Todos los movimientos de la vaca han sido registrados, facilitando la trazabilidad en caso de inspección o para satisfacer los estándares de exportación.</Text>
                         <View style={[GlobalStyleSheet.flex,{paddingVertical:15}]}>
                             <View
                                 style={{
@@ -111,9 +112,9 @@ const ProductsDetails = ({navigation} : ProductsDetailsScreenProps) => {
                             >
                                 <View style={{flexDirection:'row', gap:5 }}>
                                     <Text style={[styles.subtitle2,{fontSize:14,color:colors.title}]}>$</Text>
-                                    <Text style={[styles.subtitle2,{color:colors.title,lineHeight:30}]}>5.8</Text>
+                                    <Text style={[styles.subtitle2,{color:colors.title,lineHeight:30}]}>$1200</Text>
                                 </View>
-                                <Text style={{...FONTS.fontMedium,fontSize:16,color:'#9A9A9A'}}>$8.0</Text>
+                                <Text style={{...FONTS.fontMedium,fontSize:16,color:'#9A9A9A'}}>$2200</Text>
                             </View>
                             <View>
                                 <CheckoutItems
@@ -121,7 +122,7 @@ const ProductsDetails = ({navigation} : ProductsDetailsScreenProps) => {
                                 />
                             </View>
                         </View>
-                        <Text style={{...FONTS.fontLight,fontSize:12,color:theme.dark ? 'rgba(255,255,255,.7)':'#4E4E4E',marginTop:5}}>*)Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</Text>
+                        <Text style={{...FONTS.fontLight,fontSize:12,color:theme.dark ? 'rgba(255,255,255,.7)':'#4E4E4E',marginTop:5}}> Alimentación: Alimentada con una dieta equilibrada y controlada, lo que asegura que produce leche rica en grasa y beta-caroteno, característica distintiva de la leche de vaca Guernsey. Todos los detalles de su alimentación están documentados para garantizar la máxima calidad de la leche.</Text>
                     </View>
                 </View>
             </ScrollView>
