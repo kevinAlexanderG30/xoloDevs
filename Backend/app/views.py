@@ -10,6 +10,24 @@ from .Serializer.userSerializer import RegisterSerializer, LoginSerializer, User
 
 User = get_user_model()
 
+
+from rest_framework import serializers
+from .models import Cow
+
+class CowSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Cow
+        fields = '__all__'
+
+from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+
+
+class CowViewSet(viewsets.ModelViewSet):
+    queryset = Cow.objects.all()
+    serializer_class = CowSerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]  # Lectura para todos, modificaciones solo autenticado
+
 class RegisterView(APIView):
     permission_classes = [AllowAny]
 

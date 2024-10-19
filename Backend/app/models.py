@@ -30,3 +30,15 @@ class PhoneNumber(models.Model):
 
     def __str__(self):
         return f"{self.number} ({self.type})"
+
+
+class Cow(models.Model):
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    image_url = models.ImageField(upload_to='images/vendetuvaca/cows/', null=True, blank=True)  
+    price = models.DecimalField(max_digits = 5, decimal_places = 2)
+    description = models.TextField()
+    title = models.CharField(max_length=100)
+    age = models.IntegerField()
+
+
+
