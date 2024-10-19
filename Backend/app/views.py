@@ -12,7 +12,19 @@ User = get_user_model()
 
 
 from rest_framework import serializers
-from .models import Cow
+from .models import Cow, PhoneNumber
+
+class PhoneNumberSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PhoneNumber
+        fields = ['number', 'type']
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    phone_numbers = PhoneNumberSerializer(many=True, read_only=True)  # Números de teléfono relacionados
+
+    class Meta:
+        model = User
+        fields = ['id', 'email', 'username', 'profile_picture', 'phone_numbers']
 
 class CowSerializer(serializers.ModelSerializer):
     class Meta:
@@ -62,6 +74,16 @@ class RegisterView(APIView):
             return Response({"message": "Usuario registrado con éxito"}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
+from django.shortcuts import get_object_or_404
+
+class UserProfileView(APIView):
+    permission_classes = [AllowAny]  # Desactivamos la autenticación
+
+    @swagger_auto_schema(responses={200: UserProfileSerializer})
+    def get(self, request, user_id):
+        user = get_object_or_404(User, id=user_id)  # Busca el usuario o lanza 404 si no existe
+        serializer = UserProfileSerializer(user)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 class LoginView(APIView):
     permission_classes = [AllowAny]
